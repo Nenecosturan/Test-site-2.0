@@ -3,8 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poyraz'ın Lezzetleri | Profesyonel Lezzet Durağı</title>
-    </head>
+    <title>Poyraz'ın Lezzetleri | Premium Restoran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS BURAYA GELİR */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0f0f0f; color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
+
+        .bg-gradient-animate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c1e12 50%, #1a1a1a 100%);
+            z-index: -1;
+        }
+
+        nav.glass-nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; color: #d4af37; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li a:hover { color: #d4af37; }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #d4af37, #f2d06b);
+            border: none;
+            border-radius: 50px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+        }
+
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+
+        .reviews-section { padding: 100px 0; background: rgba(0,0,0,0.3); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+
+        .slider-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 50px;
+            scroll-snap-type: x mandatory;
+            cursor: grab;
+        }
+        .slider-container::-webkit-scrollbar { display: none; }
+
+        .review-card {
+            min-width: 350px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            scroll-snap-align: center;
+            transition: 0.5s;
+        }
+
+        .stars { color: #d4af37; margin-bottom: 15px; font-size: 1.2rem; }
+        .review-card p { font-style: italic; color: #ddd; margin-bottom: 20px; }
+        .review-card span { font-weight: bold; color: #d4af37; }
+
+        /* Animasyonlar */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
 <body>
 
     <div class="bg-gradient-animate"></div>
@@ -13,159 +103,77 @@
         <div class="logo">Poyraz'ın Lezzetleri</div>
         <ul>
             <li><a href="#home">Ana Sayfa</a></li>
-            <li><a href="#menu">Menü</a></li>
             <li><a href="#comments">Yorumlar</a></li>
         </ul>
     </nav>
 
     <header id="home" class="hero-section">
         <div class="hero-content fade-in">
-            <h1 class="liquid-text">Efsanevi Lezzetler</h1>
+            <h1>Efsanevi Lezzetler</h1>
             <p>Samsun'un en iyi restoran deneyimine hoş geldiniz.</p>
-            <button class="cta-button">Menüyü Keşfet</button>
+            <button class="cta-button">Hemen Rezervasyon Yap</button>
         </div>
     </header>
 
     <section id="comments" class="reviews-section">
-        <h2 class="section-title">Müşterilerimizin Deneyimleri</h2>
+        <h2 class="section-title fade-in">Müşterilerimizin Deneyimleri</h2>
         <div class="slider-container">
-            <div class="reviews-wrapper">
-                <div class="review-card glass-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Hayatımda yediğim en iyi yemeklerdi, servis şahane!"</p>
-                    <span>- Ahmet Y.</span>
-                </div>
-                <div class="review-card glass-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Ambiyans ve lezzet bir arada. Kesinlikle tavsiye ederim."</p>
-                    <span>- Elif K.</span>
-                </div>
-                </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Samsun'da yediğim en kaliteli yemekti. Ortamın havası bambaşka!"</p>
+                <span>- Caner Demir</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Hizmet kalitesi ve sunum gerçekten profesyonel. Herkese öneririm."</p>
+                <span>- Aslıhan Yılmaz</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Liquid Glass tasarımı gibi akıcı bir lezzet! Harikaydı."</p>
+                <span>- Mert Kaya</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Ailecek geldik, çok memnun kaldık. 5 yıldızı sonuna kadar hak ediyor."</p>
+                <span>- Zeynep S.</span>
+            </div>
         </div>
     </section>
 
+    <script>
+        // Sayfa Kaydırma Animasyonu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Slider Kaydırma Fonksiyonu
+        const slider = document.querySelector('.slider-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => { isDown = false; slider.style.cursor = 'grab'; });
+        slider.addEventListener('mouseup', () => { isDown = false; slider.style.cursor = 'grab'; });
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
 </html>
-/* Modern Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-
-body { background: #0f0f0f; color: #fff; overflow-x: hidden; }
-
-/* Profesyonel Gradyan Arka Plan */
-.bg-gradient-animate {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c1e12 50%, #1a1a1a 100%);
-    z-index: -1;
-    filter: blur(80px);
-}
-
-/* Liquid Glass Efekti */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glass-card:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-/* Sayfa Geçiş ve Solma Animasyonları */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: reveal 1.5s forwards ease-out;
-}
-
-@keyframes reveal {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Kaydırılabilir Yorum Alanı */
-.slider-container {
-    overflow-x: auto;
-    padding: 40px 20px;
-    display: flex;
-    gap: 30px;
-    scroll-behavior: smooth;
-}
-.slider-container::-webkit-scrollbar { display: none; }
-
-.review-card {
-    min-width: 300px;
-    padding: 30px;
-    text-align: center;
-}
-
-.stars { color: #d4af37; font-size: 1.2rem; margin-bottom: 10px; }
-/* Aydınlanma (Glow) Efekti */
-.cta-button {
-    padding: 15px 35px;
-    background: linear-gradient(45deg, #d4af37, #f2d06b);
-    border: none;
-    border-radius: 50px;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    transition: 0.3s;
-}
-
-.cta-button:hover {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
-    transform: translateY(-3px);
-}
-
-/* Geçişlerdeki Bulanıklık (Blur) Kontrolü */
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 100px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-// Sayfa yüklendiğinde elemanları aydınlatarak getir
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('.glass-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.filter = "blur(0)";
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(s => {
-        s.style.opacity = "0";
-        s.style.filter = "blur(10px)";
-        s.style.transition = "all 1s ease";
-        observer.observe(s);
-    });
-});
-
-// Yorumlar alanını mouse ile sürükleyerek kaydırma (opsiyonel geliştirme)
-const slider = document.querySelector('.slider-container');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', () => isDown = false);
-slider.addEventListener('mouseup', () => isDown = false);
-slider.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-});
