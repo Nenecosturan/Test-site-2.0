@@ -3,177 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poyraz'ın Lezzetleri | Premium Restoran</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS BURAYA GELİR */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #0f0f0f; color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
-
-        .bg-gradient-animate {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c1e12 50%, #1a1a1a 100%);
-            z-index: -1;
-        }
-
-        nav.glass-nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo { font-weight: 700; font-size: 1.5rem; color: #d4af37; }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        nav ul li a:hover { color: #d4af37; }
-
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
-
-        .cta-button {
-            padding: 15px 40px;
-            background: linear-gradient(45deg, #d4af37, #f2d06b);
-            border: none;
-            border-radius: 50px;
-            color: #000;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            transition: 0.3s;
-        }
-
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
-
-        .reviews-section { padding: 100px 0; background: rgba(0,0,0,0.3); }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-
-        .slider-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 30px;
-            padding: 20px 50px;
-            scroll-snap-type: x mandatory;
-            cursor: grab;
-        }
-        .slider-container::-webkit-scrollbar { display: none; }
-
-        .review-card {
-            min-width: 350px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            scroll-snap-align: center;
-            transition: 0.5s;
-        }
-
-        .stars { color: #d4af37; margin-bottom: 15px; font-size: 1.2rem; }
-        .review-card p { font-style: italic; color: #ddd; margin-bottom: 20px; }
-        .review-card span { font-weight: bold; color: #d4af37; }
-
-        /* Animasyonlar */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-    </style>
+    <title>Poyraz'ın Lezzetleri | Exclusive Dining</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="loader-wrapper"><div class="loader"></div></div>
+    <div class="cursor"></div>
+    <div class="bg-overlay"></div>
 
-    <div class="bg-gradient-animate"></div>
-
-    <nav class="glass-nav">
-        <div class="logo">Poyraz'ın Lezzetleri</div>
-        <ul>
-            <li><a href="#home">Ana Sayfa</a></li>
-            <li><a href="#comments">Yorumlar</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="logo">POYRAZ'IN <span>LEZZETLERİ</span></div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item">Başlangıç</a>
+            <a href="#menu" class="nav-item">Menü</a>
+            <a href="#reviews" class="nav-item">Deneyimler</a>
+            <a href="#contact" class="nav-item">İletişim</a>
+        </div>
     </nav>
 
-    <header id="home" class="hero-section">
-        <div class="hero-content fade-in">
-            <h1>Efsanevi Lezzetler</h1>
-            <p>Samsun'un en iyi restoran deneyimine hoş geldiniz.</p>
-            <button class="cta-button">Hemen Rezervasyon Yap</button>
-        </div>
-    </header>
-
-    <section id="comments" class="reviews-section">
-        <h2 class="section-title fade-in">Müşterilerimizin Deneyimleri</h2>
-        <div class="slider-container">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Samsun'da yediğim en kaliteli yemekti. Ortamın havası bambaşka!"</p>
-                <span>- Caner Demir</span>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Hizmet kalitesi ve sunum gerçekten profesyonel. Herkese öneririm."</p>
-                <span>- Aslıhan Yılmaz</span>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Liquid Glass tasarımı gibi akıcı bir lezzet! Harikaydı."</p>
-                <span>- Mert Kaya</span>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Ailecek geldik, çok memnun kaldık. 5 yıldızı sonuna kadar hak ediyor."</p>
-                <span>- Zeynep S.</span>
+    <section id="home" class="hero">
+        <div class="hero-inner">
+            <h1 class="reveal-text">Gastronomi Sanatla Buluşuyor</h1>
+            <p class="fade-up">Samsun'un kalbinde, Liquid Glass teknolojisiyle harmanlanmış eşsiz bir atmosfer.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">Masayı Ayırt</button>
+                <button class="btn-secondary">Hikayemiz</button>
             </div>
         </div>
     </section>
 
-    <script>
-        // Sayfa Kaydırma Animasyonu
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    <section id="reviews" class="reviews">
+        <h2 class="section-title">Gurme Yorumları</h2>
+        <div class="slider-outer">
+            <div id="reviews-container" class="slider-inner">
+                </div>
+        </div>
+    </section>
 
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-
-        // Slider Kaydırma Fonksiyonu
-        const slider = document.querySelector('.slider-container');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.style.cursor = 'grabbing';
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-        slider.addEventListener('mouseleave', () => { isDown = false; slider.style.cursor = 'grab'; });
-        slider.addEventListener('mouseup', () => { isDown = false; slider.style.cursor = 'grab'; });
-        slider.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-    </script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
